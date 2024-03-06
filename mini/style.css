@@ -27,7 +27,7 @@ body {
     max-width: 600px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #rbg(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -50,6 +50,34 @@ body {
     font-style: italic;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+button:hover {
+    filter: brightness(110%)
+}
+
+button:active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(225, 225, 225, 0.70);
+}
+
+button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background: #333;
+    outline: none;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.70);
+}
+
+
 @media (max-width: 768px) {
 
     .main-container {
@@ -71,5 +99,3 @@ body {
         font-size: 1rem;
     }
 }
-```
-```
