@@ -8,8 +8,22 @@ const newQuoteBtn = document.getElementById('new-quote');
 
 let apiQuotes = [];
 
+
+// LOADER FUNCTION
+function loading() {
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+// HIDE LOADER FUNCTION
+function complete() {
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+}
+
 // FUNCTION TO SHOW NEW QUOTE
 function newQuote() {
+    loading();
     // math.floor to round down to nearest whole number
     const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
     // Check if Author field is blank and replace it with 'Unknown' copilot
@@ -25,6 +39,7 @@ function newQuote() {
         quoteText.classList.remove('long-quote');
     }
     quoteText.textContent = quote.text;
+    complete();
 }
 
 async function getQuotes() {
